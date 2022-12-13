@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFDB.Views.AddForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDB.Views"
+        mc:Ignorable="d"
+        Title="Добавить работника" Height="320" Width="340"
+        ResizeMode="NoResize">
+    <Grid Margin="0,0,0,2" Background="Gainsboro">
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="81,53,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="223" Height="29" />
+        <TextBox x:Name="TextBoxAge" HorizontalAlignment="Left" Margin="81,95,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="223" Height="29"/>
+        <TextBox x:Name="TextBoxClass" HorizontalAlignment="Left" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="223" Height="29" Margin="81,138,0,0"/>
+        <Button x:Name="Cancel" Content="Отмена" HorizontalAlignment="Left" Margin="75,204,0,0"
+                VerticalAlignment="Top" Height="27" Width="90" Click="Cancel_Click" Background="White"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="170,204,0,0"
+                VerticalAlignment="Top" Height="27" Width="90" Click="Add_Click" Background="White"/>
+        <Label x:Name="LabelName" Content="Имя" HorizontalAlignment="Left" Margin="10,55,0,0"
+               VerticalAlignment="Top" RenderTransformOrigin="-1.358,-1.039"/>
+        <Label x:Name="LabelPosition" Content="Возраст" HorizontalAlignment="Left" Margin="10,97,0,0"
+               VerticalAlignment="Top" RenderTransformOrigin="-1.358,-1.039"/>
+        <Label x:Name="LabelSalary" Content="Класс" HorizontalAlignment="Left" Margin="10,140,0,0"
+               VerticalAlignment="Top" RenderTransformOrigin="-1.358,-1.039"/>
+    </Grid>
+</Window>

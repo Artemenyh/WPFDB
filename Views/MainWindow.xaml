@@ -1,0 +1,76 @@
+﻿<Window x:Class="WPFDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDB"
+        mc:Ignorable="d"
+        Title="Работники" Background="#FF1C1C1C" Height="350" Width="500"
+        ResizeMode="NoResize">
+    <Grid>
+        <DataGrid  x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Top" Width="480"
+                   Height="248" Margin="0,51,0,0" AutoGenerateColumns="False" CanUserAddRows="False"
+                   HeadersVisibility="Column" Background="Gainsboro" Foreground="Black" BorderBrush="Gainsboro" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Gainsboro"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontWeight" Value="SemiBold"/>
+                    <Setter Property = "BorderThickness" Value="0,0,0,0"/>
+                    <Setter Property = "BorderBrush" Value="Transparent"/>
+                    <Setter Property = "Height" Value="30"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="DataGridCell">
+                    <Style.Setters>
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                    </Style.Setters>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding studentID}" Width="50"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="*"/>
+                <DataGridTextColumn Header="Класс" Binding="{Binding Class}" Width="100"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                  x:Name="ButtonUpdate"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Content="V" Width="auto" Height="auto"
+                  Foreground="Green" Background="Transparent" FontWeight="ExtraBlack"
+                  Click="ButtonUpdate_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                  x:Name="ButtonDelete"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Content="X" Width="auto" Height="auto"
+                  Foreground="Red" Background="Transparent" FontWeight="ExtraBlack"
+                  Click="ButtonDelete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="AddEmployee" Content="Добавить" HorizontalAlignment="Left"
+                Margin="404,20,0,0" VerticalAlignment="Top" Height="26" Width="77"
+                Click="AddEmployee_Click" Background="White"/>
+        <Button x:Name="UpdateData" Content="Обновить" HorizontalAlignment="Left"
+                Margin="322,20,0,0" VerticalAlignment="Top" Height="26" Width="77"
+                Click="UpdateData_Click" Background="White"/>
+    </Grid>
+</Window>
